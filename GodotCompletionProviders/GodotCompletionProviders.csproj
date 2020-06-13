@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>8</LangVersion>
+        <PackageId>GodotCompletionProviders</PackageId>
+        <Version>1.0.0</Version>
+        <AssemblyVersion>$(Version)</AssemblyVersion>
+        <Authors>Godot Engine contributors</Authors>
+        <Company />
+        <PackageTags>godot</PackageTags>
+        <RepositoryUrl>https://github.com/godotengine/godot-csharp-visualstudio/tree/master/GodotCompletionProviders</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Description>
+    Set of Roslyn C# code completion providers for Godot.
+
+    These providers alone don't actually provide the suggestions. IProviderContext must be implemented and set in BaseCompletionProvider.Context for that.
+        </Description>
+    </PropertyGroup>
+    <ItemGroup>
+        <!--
+        IMPORTANT:
+        Microsoft.CodeAnalysis.CSharp.Features version must be equal or lower than the one Visual Studio uses (VS2019 uses 3.3.1)
+        -->
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Features" Version="3.3.1" />
+    </ItemGroup>
+</Project>

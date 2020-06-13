@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CommandTable language="en-us" xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
+  <Commands package="guidDebugTargetHandlerCmdSet">
+    <Buttons>
+      <Button guid="guidGodotDebugTargetCmdSet" id="PlayInEditorId" priority="0x1000" type="Button">
+        <Parent guid="guidDebugTargetHandlerCmdSet" id="DebugTargetMenuControllerGroup"/>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Play in Editor</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidGodotDebugTargetCmdSet" id="LaunchId" priority="0x1000" type="Button">
+        <Parent guid="guidDebugTargetHandlerCmdSet" id="DebugTargetMenuControllerGroup"/>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Launch</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidGodotDebugTargetCmdSet" id="AttachId" priority="0x1000" type="Button">
+        <Parent guid="guidDebugTargetHandlerCmdSet" id="DebugTargetMenuControllerGroup"/>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Attach</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidGodotPackage" value="{fbf828da-088b-482a-a550-befaed4b5d25}" />
+
+    <GuidSymbol name="guidDebugTargetHandlerCmdSet" value="{6e87cfad-6c05-4adf-9cd7-3b7943875b7c}">
+      <IDSymbol name="DebugTargetMenuControler" value="0x0100" />
+      <IDSymbol name="DebugTargetMenuControllerFooterGroup" value="0x2000" />
+      <IDSymbol name="DebugTargetMenuControllerGroup" value="0x1000" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidGodotDebugTargetCmdSet" value="{4E50788E-B023-4F77-AFE9-797603876907}">
+      <IDSymbol name="DebugTargetMenuControllerGroup" value="0x1000" />
+      <IDSymbol name="PlayInEditorId" value="0x8192" />
+      <IDSymbol name="LaunchId" value="0x8193" />
+      <IDSymbol name="AttachId" value="0x8194" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
