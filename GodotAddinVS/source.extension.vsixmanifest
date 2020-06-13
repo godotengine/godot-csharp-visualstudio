@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Godot.Addin" Version="1.0" Language="en-US" Publisher="Godot Engine" />
+        <Identity Id="Godot.Addin" Version="1.0" Language="en-US" Publisher="Ignacio Roldán Etcheverry" />
         <DisplayName>Godot Addin</DisplayName>
         <Description xml:space="preserve">Support for Godot Engine C# projects, including debugging and extended code completion.</Description>
         <License>LICENSE.txt</License>
@@ -9,7 +9,7 @@
         <Tags>Godot</Tags>
     </Metadata>
     <Installation>
-        <InstallationTarget Version="[16.0,)" Id="Microsoft.VisualStudio.Community" />
+        <InstallationTarget Version="[16.0,17.0)" Id="Microsoft.VisualStudio.Community" />
     </Installation>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="GodotCompletionProviders" Path="|GodotCompletionProviders|" />
