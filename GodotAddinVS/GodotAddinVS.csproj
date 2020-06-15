@@ -75,7 +75,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Clide" Version="3.2.68" />
+    <PackageReference Include="Clide" Version="4.1.1" ExcludeAssets="runtime" />
+    <PackageReference Include="Clide.Windows" Version="4.1.1" ExcludeAssets="runtime" />
     <PackageReference Include="GodotTools.IdeMessaging" Version="1.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.205" ExcludeAssets="runtime">
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -84,7 +85,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Mono.Debugging.VisualStudio" Version="16.1.3-pre" />
+    <PackageReference Include="Mono.Debugging.VisualStudio" Version="16.1.3-pre" ExcludeAssets="runtime" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.png">
@@ -98,9 +99,6 @@
     <VSCTCompile Include="GodotPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <VSIXSourceItem Include="@(MonoDebuggingVsix)" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
