@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="GodotAddinVS" Version="1.0" Language="en-US" Publisher="Ignacio Roldán Etcheverry" />
+        <Identity Id="GodotAddinVS" Version="1.1.0" Language="en-US" Publisher="Ignacio Roldán Etcheverry" />
         <DisplayName>Godot Support</DisplayName>
         <Description xml:space="preserve">Support for Godot Engine C# projects, including debugging and extended code completion.</Description>
         <License>LICENSE.txt</License>
@@ -16,7 +16,6 @@
     </Assets>
     <Dependencies>
         <Dependency d:Source="Installed" Id="Microsoft.VisualStudio.MPF.16.0" DisplayName="Visual Studio MPF 16.0" Version="[16.0,)" />
-        <Dependency d:Source="Installed" Id="Mono.Debugging.VisualStudio" DisplayName="Mono Debugging for Visual Studio" Version="[16.0,17.0)" />
     </Dependencies>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.MonoDebugger" Version="[16.0,)" DisplayName="Mono debugger" />
@@ -31,6 +30,6 @@
         As such, this extension sadly requires Xamarin to be installed as well for now. It's a quite
         bulky dependency, so we should continue looking for possible alternatives to this.
         -->
-        <!--Prerequisite Id="Component.Xamarin" Version="[16.6.30013.169,17.0)" DisplayName="Xamarin" /-->
+        <Prerequisite Id="Component.Xamarin" Version="[16.6.30013.169,17.0)" DisplayName="Xamarin" />
     </Prerequisites>
 </PackageManifest>
