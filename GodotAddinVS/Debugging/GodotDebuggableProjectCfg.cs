@@ -92,6 +92,9 @@ namespace GodotAddinVS.Debugging
 
         public int DebugLaunch(uint grfLaunch)
         {
+            bool noDebug = ((__VSDBGLAUNCHFLAGS)grfLaunch & __VSDBGLAUNCHFLAGS.DBGLAUNCH_NoDebug) != 0;
+            _ = noDebug; // TODO: Run without Debugging
+
             Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
 
             var random = new Random(DateTime.Now.Millisecond);
@@ -99,7 +102,7 @@ namespace GodotAddinVS.Debugging
 
             var startArgs = new SoftDebuggerListenArgs(_baseProject.Name, IPAddress.Loopback, port) {MaxConnectionAttempts = 3};
 
-            var startInfo = new GodotStartInfo(startArgs, null, _baseProject) { WorkingDirectory = GodotPackage.Instance.GodotSolutionEventsListener?.SolutionDir};
+            var startInfo = new GodotStartInfo(startArgs, null, _baseProject) {WorkingDirectory = GodotPackage.Instance.GodotSolutionEventsListener?.SolutionDir};
             var session = new GodotDebuggerSession();
 
             var launcher = new MonoDebuggerLauncher(new Progress<string>());
