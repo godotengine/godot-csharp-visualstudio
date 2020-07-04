@@ -1,4 +1,4 @@
-﻿using EnvDTE;
+using EnvDTE;
 using Mono.Debugging.Soft;
 using Mono.Debugging.VisualStudio;
 

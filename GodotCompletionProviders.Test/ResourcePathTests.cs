@@ -14,7 +14,7 @@ namespace Godot
         public static Resource Load(string path) => throw new NotImplementedException();
         public static T Load<T>(string path) where T : class => throw new NotImplementedException();
     }
-    
+
     public static class ResourceLoader
     {
         public static Resource Load(string path, string typeHint = "", bool noCache = false) => throw new NotImplementedException();

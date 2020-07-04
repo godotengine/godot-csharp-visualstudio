@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell.Flavor;
 using Microsoft.VisualStudio.Shell.Interop;
 using System;
