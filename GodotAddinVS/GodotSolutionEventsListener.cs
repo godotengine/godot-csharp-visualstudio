@@ -148,6 +148,7 @@ namespace GodotAddinVS
 
         private void Close()
         {
+            ThreadHelper.ThrowIfNotOnUIThread();
             if (GodotMessagingClient != null)
             {
                 ServiceContainer.RemoveService(typeof(Client));
