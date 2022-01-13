@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="GodotAddinVS" Version="1.1.1" Language="en-US" Publisher="Ignacio Roldán Etcheverry" />
+        <Identity Id="GodotAddinVS" Version="1.1.2" Language="en-US" Publisher="Ignacio Roldán Etcheverry" />
         <DisplayName>Godot Support</DisplayName>
         <Description xml:space="preserve">Support for Godot Engine C# projects, including debugging and extended code completion.</Description>
         <License>LICENSE.txt</License>
@@ -9,7 +9,24 @@
         <Tags>Godot</Tags>
     </Metadata>
     <Installation>
-        <InstallationTarget Version="[16.0,17.0)" Id="Microsoft.VisualStudio.Community" />
+        <InstallationTarget Version="[16.0,18.0)" Id="Microsoft.VisualStudio.Community">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[16.0,18.0)" Id="Microsoft.VisualStudio.Pro">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[16.0,18.0)" Id="Microsoft.VisualStudio.Enterprise">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[16.0,18.0)" Id="Microsoft.VisualStudio.Community">
+            <ProductArchitecture>x86</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[16.0,18.0)" Id="Microsoft.VisualStudio.Pro">
+            <ProductArchitecture>x86</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[16.0,18.0)" Id="Microsoft.VisualStudio.Enterprise">
+            <ProductArchitecture>x86</ProductArchitecture>
+        </InstallationTarget>
     </Installation>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="GodotCompletionProviders" Path="|GodotCompletionProviders|" />
@@ -20,7 +37,7 @@
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.MonoDebugger" Version="[16.0,)" DisplayName="Mono debugger" />
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,)" DisplayName="Visual Studio core editor" />
-        <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[16.0,)" DisplayName="Roslyn Language Services" />
+		<Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[16.0,)" DisplayName="Roslyn Language Services" />
 
         <!--
         Found no better way to make Visual Studio install Clide when installing this extension.
@@ -30,6 +47,6 @@
         As such, this extension sadly requires Xamarin to be installed as well for now. It's a quite
         bulky dependency, so we should continue looking for possible alternatives to this.
         -->
-        <Prerequisite Id="Component.Xamarin" Version="[16.6.30013.169,17.0)" DisplayName="Xamarin" />
+        <Prerequisite Id="Component.Xamarin" Version="[17.0,18.0)" DisplayName="Xamarin" />
     </Prerequisites>
 </PackageManifest>
