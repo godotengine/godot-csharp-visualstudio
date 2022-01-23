@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="GodotAddinVS" Version="1.1.2" Language="en-US" Publisher="Ignacio Roldán Etcheverry" />
+        <Identity Id="GodotAddinVS" Version="2.0.0" Language="en-US" Publisher="Ignacio Roldán Etcheverry" />
         <DisplayName>Godot Support</DisplayName>
         <Description xml:space="preserve">Support for Godot Engine C# projects, including debugging and extended code completion.</Description>
         <License>LICENSE.txt</License>
