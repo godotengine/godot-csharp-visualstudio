@@ -78,10 +78,10 @@
     <PackageReference Include="Clide" Version="4.1.1" ExcludeAssets="runtime" />
     <PackageReference Include="Clide.Windows" Version="4.1.1" ExcludeAssets="runtime" />
     <PackageReference Include="GodotTools.IdeMessaging" Version="1.1.1" />
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.0.31902.203" ExcludeAssets="runtime">
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.203" ExcludeAssets="runtime">
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.0.5232">
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.5.2044">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>

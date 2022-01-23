@@ -44,7 +44,7 @@ namespace GodotAddinVS.GodotMessaging
 
             var mainWindow = dte.MainWindow;
             mainWindow.Activate();
-            SetForegroundWindow(mainWindow.HWnd);
+            SetForegroundWindow(new IntPtr(mainWindow.HWnd));
 
             return new OpenFileResponse {Status = MessageStatus.Ok};
         }
