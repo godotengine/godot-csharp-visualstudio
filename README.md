@@ -6,6 +6,7 @@ Visual Studio extension for the Godot game engine C# projects.
 
 - **Godot 3.2.3** or greater. Older versions of Godot are not supported and do not work.
 - **Visual Studio 2019**. VS 2017 or earlier are not supported.
+- **Visit 2.x** branch to get the **Visual Studio 2022** supported version.
 
 ## Features
 
