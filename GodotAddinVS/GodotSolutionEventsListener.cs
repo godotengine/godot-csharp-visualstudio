@@ -8,6 +8,7 @@ using GodotAddinVS.Debugging;
 using GodotAddinVS.GodotMessaging;
 using GodotTools.IdeMessaging;
 using GodotTools.IdeMessaging.Requests;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 
@@ -85,7 +86,7 @@ namespace GodotAddinVS
                 if (_registered)
                     return 0;
 
-                _godotProjectDir = SolutionDir;
+                _godotProjectDir = EvalGodotProjectDir(hierarchy);
 
                 DebuggerEvents = ServiceProvider.GetService<DTE>().Events.DebuggerEvents;
                 DebuggerEvents.OnEnterDesignMode += DebuggerEvents_OnEnterDesignMode;
@@ -161,6 +162,39 @@ namespace GodotAddinVS
                 DebuggerEvents.OnEnterDesignMode -= DebuggerEvents_OnEnterDesignMode;
                 DebuggerEvents = null;
             }
+        }
+
+        private string EvalGodotProjectDir(IVsHierarchy hierarchy)
+        {
+            try
+            {
+                ThreadHelper.ThrowIfNotOnUIThread();
+                var dteProject = GetDTEProject(hierarchy);
+                if (dteProject == null)
+                {
+                    return SolutionDir;
+                }
+
+                var evalProj = new Microsoft.Build.Evaluation.Project(dteProject.FullName);
+                var evaluated = evalProj.GetPropertyValue("GodotProjectDir");
+                return string.IsNullOrWhiteSpace(evaluated) ? SolutionDir : evaluated;
+            }
+            catch
+            {
+                return SolutionDir;
+            }
+        }
+
+        private static EnvDTE.Project GetDTEProject(IVsHierarchy hierarchy)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
+            var itemid = VSConstants.VSITEMID_ROOT;
+
+            object objProj;
+            hierarchy.GetProperty(itemid, (int)__VSHPROPID.VSHPROPID_ExtObject, out objProj);
+
+            return objProj as EnvDTE.Project;
         }
     }
 }
