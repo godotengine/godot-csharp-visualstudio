@@ -136,7 +136,7 @@ namespace GodotAddinVS.Debugging
 
                     var processStartInfo = new ProcessStartInfo(GetGodotExecutablePath())
                     {
-                        Arguments = $"--path {workingDir} --remote-debug {host}:{remoteDebugPort}", // TODO: Doesn't work with 4.0dev. Should be tcp://host:port which doesn't work in 3.2...
+                        Arguments = $"--path {workingDir} --remote-debug {host}:{remoteDebugPort} {godotStartInfo.StartArguments}", // TODO: Doesn't work with 4.0dev. Should be tcp://host:port which doesn't work in 3.2...
                         WorkingDirectory = workingDir,
                         RedirectStandardOutput = true,
                         RedirectStandardError = true,
