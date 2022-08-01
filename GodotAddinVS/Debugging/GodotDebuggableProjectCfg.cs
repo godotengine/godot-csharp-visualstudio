@@ -6,6 +6,7 @@ using Mono.Debugging.VisualStudio;
 using System;
 using System.Net;
 using System.Runtime.InteropServices;
+using VSLangProj;
 
 namespace GodotAddinVS.Debugging
 {
@@ -103,6 +104,13 @@ namespace GodotAddinVS.Debugging
             var startArgs = new SoftDebuggerListenArgs(_baseProject.Name, IPAddress.Loopback, port) {MaxConnectionAttempts = 3};
 
             var startInfo = new GodotStartInfo(startArgs, null, _baseProject) {WorkingDirectory = GodotPackage.Instance.GodotSolutionEventsListener?.SolutionDir};
+            
+            try 
+            {
+                if (_baseProject.ConfigurationManager.ActiveConfiguration.Object is ProjectConfigurationProperties props)
+                    startInfo.StartArguments = props.StartArguments;
+            } catch(Exception){}
+            
             var session = new GodotDebuggerSession();
 
             var launcher = new MonoDebuggerLauncher(new Progress<string>());
