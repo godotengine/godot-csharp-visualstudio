@@ -70,7 +70,7 @@ namespace GodotAddinVS
 
             // Commands
             await Commands.CommandRunGodot.InitializeAsync(this);
-            await GodotAddinVS.Commands.CommandResetGodot.InitializeAsync(this);
+            await Commands.CommandResetGodot.InitializeAsync(this);
 
             RegisterProjectFactory(new GodotFlavoredProjectFactory(this));
 
