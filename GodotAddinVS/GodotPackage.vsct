@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <CommandTable language="en-us" xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
   <Commands package="guidDebugTargetHandlerCmdSet">
     <Buttons>
       <Button guid="guidGodotDebugTargetCmdSet" id="PlayInEditorId" priority="0x1000" type="Button">
-        <Parent guid="guidDebugTargetHandlerCmdSet" id="DebugTargetMenuControllerGroup"/>
+        <Parent guid="guidDebugTargetHandlerCmdSet" id="DebugTargetMenuControllerGroup" />
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>TextChanges</CommandFlag>
@@ -13,7 +13,7 @@
       </Button>
 
       <Button guid="guidGodotDebugTargetCmdSet" id="LaunchId" priority="0x1000" type="Button">
-        <Parent guid="guidDebugTargetHandlerCmdSet" id="DebugTargetMenuControllerGroup"/>
+        <Parent guid="guidDebugTargetHandlerCmdSet" id="DebugTargetMenuControllerGroup" />
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>TextChanges</CommandFlag>
@@ -23,7 +23,7 @@
       </Button>
 
       <Button guid="guidGodotDebugTargetCmdSet" id="AttachId" priority="0x1000" type="Button">
-        <Parent guid="guidDebugTargetHandlerCmdSet" id="DebugTargetMenuControllerGroup"/>
+        <Parent guid="guidDebugTargetHandlerCmdSet" id="DebugTargetMenuControllerGroup" />
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>TextChanges</CommandFlag>
@@ -49,5 +49,82 @@
       <IDSymbol name="LaunchId" value="0x8193" />
       <IDSymbol name="AttachId" value="0x8194" />
     </GuidSymbol>
+  
+    
+  
+    <GuidSymbol value="{a90813d5-0da4-4587-8fbf-71f3d46492f1}" name="guidImages">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidSHLMainMenu" value="{d309f791-903f-11d0-9efc-00a0c911004f}">
+	    <IDSymbol name="IDM_VS_MENU_EXTENSIONS" value="0x0091" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{d71528ca-92b8-49bb-8655-8b478b495499}" name="guidGodotPackageCmdSet">
+	    <IDSymbol value="4128" name="MyMenuGroup" />
+	    <IDSymbol value="256" name="cmdidCommandRunGodot" />
+	    <IDSymbol name="GoDotExtMenu" value="0x1100"/>
+    </GuidSymbol>
+
+    <GuidSymbol value="{38009f93-330e-4875-ab88-e127fd85bb88}" name="guidGodotPackageCmdSet1">
+      <IDSymbol value="4128" name="MyMenuGroup" />
+      <IDSymbol value="256" name="cmdidCommandResetGodot" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{75310202-7be7-4f12-a22e-8a8321229369}" name="guidImages1">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+
   </Symbols>
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+  <Commands package="guidGodotPackage">
+	  <Menus>
+		  <Menu guid="guidGodotPackageCmdSet" id="GoDotExtMenu" priority="0x0100" type="Menu">
+              <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS"/>
+			  <Strings>
+				  <ButtonText>GoDot</ButtonText>
+			  </Strings>
+		  </Menu>
+	  </Menus>
+	  <Groups>
+
+		  <Group guid="guidGodotPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+			<Parent guid="guidGodotPackageCmdSet" id="GoDotExtMenu" />
+		  </Group>
+		  
+		  <Group guid="guidGodotPackageCmdSet1" id="MyMenuGroup" priority="0x0600">
+			<Parent guid="guidGodotPackageCmdSet" id="GoDotExtMenu" />
+		  </Group>
+
+	  </Groups>
+
+	  <Buttons>
+
+		  <Button guid="guidGodotPackageCmdSet" id="cmdidCommandRunGodot" priority="0x0100" type="Button">
+			<Parent guid="guidGodotPackageCmdSet" id="MyMenuGroup" />
+			<Strings>
+				<ButtonText>Launch GoDot</ButtonText>
+			</Strings>
+		  </Button>
+
+		  <Button guid="guidGodotPackageCmdSet1" id="cmdidCommandResetGodot" priority="0x0100" type="Button">
+			<Parent guid="guidGodotPackageCmdSet1" id="MyMenuGroup" />
+			  <Strings>
+				<ButtonText>Configure</ButtonText>
+			  </Strings>
+		  </Button>
+
+	  </Buttons>
+  </Commands>
 </CommandTable>
