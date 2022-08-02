@@ -6,6 +6,7 @@ namespace GodotAddinVS.Debugging
 {
     internal class GodotStartInfo : StartInfo
     {
+        public string StartArguments;
         public GodotStartInfo(SoftDebuggerStartArgs args, DebuggingOptions options, Project startupProject) :
             base(args, options, startupProject)
         {
