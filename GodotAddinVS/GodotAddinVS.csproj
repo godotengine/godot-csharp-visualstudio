@@ -71,8 +71,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Clide" Version="4.1.1" ExcludeAssets="runtime" />
