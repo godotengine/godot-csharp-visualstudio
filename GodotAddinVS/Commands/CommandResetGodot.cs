@@ -89,13 +89,13 @@ namespace GodotAddinVS.Commands {
             var config = settingsManager.GetWritableSettingsStore(SettingsScope.UserSettings);
 
             var ofd = new OpenFileDialog {
-                Filter = @"GoDot executable (.exe)|*.exe"
+                Filter = @"Godot executable (.exe)|*.exe"
             };
             var result = ofd.ShowDialog(null);
 
             if (result != DialogResult.OK) return;
-            config.SetString("External Tools", "GoDotExecutable", ofd.FileName);
-            config.SetString("External Tools", "GoDotPath", Path.GetDirectoryName(ofd.FileName));
+            config.SetString("External Tools", "GodotExecutable", ofd.FileName);
+            config.SetString("External Tools", "GodotPath", Path.GetDirectoryName(ofd.FileName));
         }
     }
 }
