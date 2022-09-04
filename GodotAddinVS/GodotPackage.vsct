@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <CommandTable language="en-us" xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
   <Commands package="guidDebugTargetHandlerCmdSet">
@@ -68,7 +68,7 @@
     <GuidSymbol value="{d71528ca-92b8-49bb-8655-8b478b495499}" name="guidGodotPackageCmdSet">
       <IDSymbol value="4128" name="MyMenuGroup" />
       <IDSymbol value="256" name="cmdidCommandRunGodot" />
-      <IDSymbol name="GoDotExtMenu" value="0x1100" />
+      <IDSymbol name="GodotExtMenu" value="0x1100" />
     </GuidSymbol>
 
     <GuidSymbol value="{38009f93-330e-4875-ab88-e127fd85bb88}" name="guidGodotPackageCmdSet1">
@@ -90,21 +90,21 @@
   <Extern href="vsshlids.h" />
   <Commands package="guidGodotPackage">
     <Menus>
-      <Menu guid="guidGodotPackageCmdSet" id="GoDotExtMenu" priority="0x0100" type="Menu">
+      <Menu guid="guidGodotPackageCmdSet" id="GodotExtMenu" priority="0x0100" type="Menu">
         <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS" />
         <Strings>
-          <ButtonText>GoDot</ButtonText>
+          <ButtonText>Godot</ButtonText>
         </Strings>
       </Menu>
     </Menus>
     <Groups>
 
       <Group guid="guidGodotPackageCmdSet" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidGodotPackageCmdSet" id="GoDotExtMenu" />
+        <Parent guid="guidGodotPackageCmdSet" id="GodotExtMenu" />
       </Group>
 
       <Group guid="guidGodotPackageCmdSet1" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidGodotPackageCmdSet" id="GoDotExtMenu" />
+        <Parent guid="guidGodotPackageCmdSet" id="GodotExtMenu" />
       </Group>
 
     </Groups>
@@ -114,7 +114,7 @@
       <Button guid="guidGodotPackageCmdSet" id="cmdidCommandRunGodot" priority="0x0100" type="Button">
         <Parent guid="guidGodotPackageCmdSet" id="MyMenuGroup" />
         <Strings>
-          <ButtonText>Launch GoDot</ButtonText>
+          <ButtonText>Launch Godot</ButtonText>
         </Strings>
       </Button>
 
