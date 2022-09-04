@@ -87,8 +87,8 @@ namespace GodotAddinVS.Commands {
         private void Execute(object sender, EventArgs e) {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            string goDotPath;
-            string goDotExecutable;
+            string godotPath;
+            string godotExecutable;
 
             var settingsManager = new ShellSettingsManager(package);
             var config = settingsManager.GetWritableSettingsStore(SettingsScope.UserSettings);
@@ -97,36 +97,36 @@ namespace GodotAddinVS.Commands {
                 config.CreateCollection("External Tools");
             }
 
-            if (!config.PropertyExists("External Tools", "GoDotExecutable")) {
+            if (!config.PropertyExists("External Tools", "GodotExecutable")) {
                 var ofd = new OpenFileDialog {
-                    Filter = @"GoDot executable (.exe)|*.exe"
+                    Filter = @"Godot executable (.exe)|*.exe"
                 };
                 var result = ofd.ShowDialog(null);
 
                 if (result == DialogResult.OK) {
-                    goDotExecutable = ofd.FileName;
-                    goDotPath = Path.GetDirectoryName(goDotExecutable);
+                    godotExecutable = ofd.FileName;
+                    godotPath = Path.GetDirectoryName(godotExecutable);
 
-                    config.SetString("External Tools", "GoDotExecutable", goDotExecutable);
-                    config.SetString("External Tools", "GoDotPath", goDotPath);
+                    config.SetString("External Tools", "GodotExecutable", godotExecutable);
+                    config.SetString("External Tools", "GodotPath", godotPath);
                 } else return;
 
             } else {
-                goDotPath = config.GetString("External Tools", "GoDotPath");
-                goDotExecutable = config.GetString("External Tools", "GoDotExecutable");
+                godotPath = config.GetString("External Tools", "GodotPath");
+                godotExecutable = config.GetString("External Tools", "GodotExecutable");
             }
 
-            if (string.IsNullOrEmpty(goDotExecutable)) {
-                MessageBox.Show("GoDot", "GoDot path not set");
+            if (string.IsNullOrEmpty(godotExecutable)) {
+                MessageBox.Show("Godot", "Godot path not set");
                 return;
             }
 
-            if (!File.Exists(goDotExecutable)) {
-                MessageBox.Show("GoDot", @$"GoDot does not exist at {goDotExecutable}");
+            if (!File.Exists(godotExecutable)) {
+                MessageBox.Show("Godot", @$"Godot does not exist at {godotExecutable}");
                 return;
             }
 
-            Process.Start(goDotExecutable);
+            Process.Start(godotExecutable);
         }
     }
 }
