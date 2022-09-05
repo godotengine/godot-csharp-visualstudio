@@ -90,21 +90,21 @@
   <Extern href="vsshlids.h" />
   <Commands package="guidGodotPackage">
     <Menus>
-      <Menu guid="guidGodotPackageCmdSet" id="GoDotExtMenu" priority="0x0100" type="Menu">
+      <Menu guid="guidGodotPackageCmdSet" id="GodotExtMenu" priority="0x0100" type="Menu">
         <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS" />
         <Strings>
-          <ButtonText>GoDot</ButtonText>
+          <ButtonText>Godot</ButtonText>
         </Strings>
       </Menu>
     </Menus>
     <Groups>
 
       <Group guid="guidGodotPackageCmdSet" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidGodotPackageCmdSet" id="GoDotExtMenu" />
+        <Parent guid="guidGodotPackageCmdSet" id="GodotExtMenu" />
       </Group>
 
       <Group guid="guidGodotPackageCmdSet1" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidGodotPackageCmdSet" id="GoDotExtMenu" />
+        <Parent guid="guidGodotPackageCmdSet" id="GodotExtMenu" />
       </Group>
 
     </Groups>
@@ -114,7 +114,7 @@
       <Button guid="guidGodotPackageCmdSet" id="cmdidCommandRunGodot" priority="0x0100" type="Button">
         <Parent guid="guidGodotPackageCmdSet" id="MyMenuGroup" />
         <Strings>
-          <ButtonText>Launch GoDot</ButtonText>
+          <ButtonText>Launch Godot</ButtonText>
         </Strings>
       </Button>
 
