@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <CommandTable language="en-us" xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
   <Commands package="guidDebugTargetHandlerCmdSet">
@@ -68,7 +68,7 @@
     <GuidSymbol value="{d71528ca-92b8-49bb-8655-8b478b495499}" name="guidGodotPackageCmdSet">
       <IDSymbol value="4128" name="MyMenuGroup" />
       <IDSymbol value="256" name="cmdidCommandRunGodot" />
-      <IDSymbol name="GoDotExtMenu" value="0x1100" />
+      <IDSymbol name="GodotExtMenu" value="0x1100" />
     </GuidSymbol>
 
     <GuidSymbol value="{38009f93-330e-4875-ab88-e127fd85bb88}" name="guidGodotPackageCmdSet1">
