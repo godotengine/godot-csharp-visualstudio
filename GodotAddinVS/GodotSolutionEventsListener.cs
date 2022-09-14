@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using EnvDTE;
 using GodotAddinVS.Debugging;
 using GodotAddinVS.GodotMessaging;
 using GodotTools.IdeMessaging;
 using GodotTools.IdeMessaging.Requests;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 
@@ -67,6 +69,17 @@ namespace GodotAddinVS
         private static bool IsGodotProject(IVsHierarchy hierarchy)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
+
+            hierarchy.GetProperty(VSConstants.VSITEMID_ROOT, (int)__VSHPROPID.VSHPROPID_ExtObject, out var objProj);
+
+            const string csProjectKind = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}";
+            if (objProj is Project project && project.Kind == csProjectKind)
+            {
+                string csprojContent = File.ReadAllText(project.FileName);
+                Match match = Regex.Match(csprojContent, @"<Project\s*Sdk=""Godot.NET.Sdk/.[^>]*>");
+                return match.Success;
+            }
+
             return hierarchy is IVsAggregatableProject aggregatableProject &&
                    aggregatableProject.GetAggregateProjectTypeGuids(out string projectTypeGuids) == 0 &&
                    ParseProjectTypeGuids(projectTypeGuids)

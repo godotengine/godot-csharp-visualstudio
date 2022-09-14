@@ -36,6 +36,7 @@ namespace GodotAddinVS
     [ProvideOptionPage(typeof(GeneralOptionsPage),
         "Godot", "General", 0, 0, true)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
+    [ProvideAutoLoad(UIContextGuids80.NoSolution, PackageAutoLoadFlags.BackgroundLoad)]
     public sealed class GodotPackage : AsyncPackage
     {
         /// <summary>
